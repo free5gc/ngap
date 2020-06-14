@@ -7,7 +7,7 @@ import (
 	"strings"
 	"unsafe"
 
-	"git.cs.nctu.edu.tw/calee/sctp"
+	"github.com/ishidawataru/sctp"
 
 	"free5gc/lib/ngap/logger"
 )
