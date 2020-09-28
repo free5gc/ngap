@@ -2,6 +2,8 @@ package ngapConvert
 
 import (
 	"encoding/hex"
+
+	"free5gc/lib/ngap/logger"
 	"free5gc/lib/ngap/ngapType"
 	"free5gc/lib/openapi/models"
 )
@@ -14,12 +16,17 @@ func SNssaiToModels(ngapSnssai ngapType.SNSSAI) (modelsSnssai models.Snssai) {
 	return
 }
 
-func SNssaiToNgap(modelsSnssai models.Snssai) (ngapSnssai ngapType.SNSSAI) {
+func SNssaiToNgap(modelsSnssai models.Snssai) ngapType.SNSSAI {
+	var ngapSnssai ngapType.SNSSAI
 	ngapSnssai.SST.Value = []byte{byte(modelsSnssai.Sst)}
 
 	if modelsSnssai.Sd != "" {
 		ngapSnssai.SD = new(ngapType.SD)
-		ngapSnssai.SD.Value, _ = hex.DecodeString(modelsSnssai.Sd)
+		if sdTmp, err := hex.DecodeString(modelsSnssai.Sd); err != nil {
+			logger.NgapLog.Warnf("Decode snssai.sd failed: %+v", err)
+		} else {
+			ngapSnssai.SD.Value = sdTmp
+		}
 	}
-	return
+	return ngapSnssai
 }

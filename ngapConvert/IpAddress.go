@@ -34,11 +34,12 @@ func IPAddressToString(ipAddr ngapType.TransportLayerAddress) (ipv4Addr, ipv6Add
 	return
 }
 
-func IPAddressToNgap(ipv4Addr, ipv6Addr string) (ipAddr ngapType.TransportLayerAddress) {
+func IPAddressToNgap(ipv4Addr, ipv6Addr string) ngapType.TransportLayerAddress {
+	var ipAddr ngapType.TransportLayerAddress
 
 	if ipv4Addr == "" && ipv6Addr == "" {
 		logger.NgapLog.Warningln("IPAddressToNgap: Both ipv4 & ipv6 are nil string")
-		return
+		return ipAddr
 	}
 
 	if ipv4Addr != "" && ipv6Addr != "" { // Both ipv4 & ipv6
@@ -77,5 +78,5 @@ func IPAddressToNgap(ipv4Addr, ipv6Addr string) (ipAddr ngapType.TransportLayerA
 		}
 	}
 
-	return
+	return ipAddr
 }

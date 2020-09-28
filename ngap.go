@@ -21,30 +21,28 @@ func Encoder(pdu ngapType.NGAPPDU) ([]byte, error) {
 	return aper.MarshalWithParams(pdu, "valueExt,valueLB:0,valueUB:2")
 }
 
-func PrintResult(v reflect.Value, layer int) (s string) {
+func PrintResult(v reflect.Value, layer int) string {
 
 	fieldType := v.Type()
 	if v.Kind() == reflect.Ptr {
-		s += ("&" + PrintResult(v.Elem(), layer))
-		return
+		return "&" + PrintResult(v.Elem(), layer)
 	}
 	switch fieldType {
 	case aper.OctetStringType:
-		s = fmt.Sprintf("OctetString (0x%x)[%d]\n", v.Bytes(), len(v.Bytes()))
-		return
+		return fmt.Sprintf("OctetString (0x%x)[%d]\n", v.Bytes(), len(v.Bytes()))
 
 	case aper.BitStringType:
-		s = fmt.Sprintf("BitString (%0.8b)[%d]\n", v.Field(0).Bytes(), v.Field(1).Uint())
-		return
+		return fmt.Sprintf("BitString (%0.8b)[%d]\n", v.Field(0).Bytes(), v.Field(1).Uint())
 
 	case aper.EnumeratedType:
-		s = fmt.Sprintf("Enumerated(%d)\n", v.Uint())
-		return
+		return fmt.Sprintf("Enumerated(%d)\n", v.Uint())
 	}
+
+	var s string
 	switch v.Kind() {
 	case reflect.Struct:
 		structType := fieldType
-		s += fmt.Sprintf("{\n")
+		s += "{\n"
 		end := strings.Repeat(" ", layer) + "}\n"
 		layer += 2
 		space := strings.Repeat(" ", layer)
@@ -54,8 +52,7 @@ func PrintResult(v reflect.Value, layer int) (s string) {
 			s += (space + fmt.Sprintf("%s : ", structType.Field(int(present)).Name))
 			s += PrintResult(v.Field(int(present)), layer)
 			s += end
-			return
-
+			return s
 		}
 		for i := 0; i < v.NumField(); i++ {
 			// optional
@@ -86,5 +83,5 @@ func PrintResult(v reflect.Value, layer int) (s string) {
 		fmt.Printf("Type: %s does not handle", v.Type())
 
 	}
-	return
+	return s
 }

@@ -14,11 +14,12 @@ func TraceDataToModels(traceActivation ngapType.TraceActivation) (traceData mode
 	return
 }
 
-func TraceDataToNgap(traceData models.TraceData, trsr string) (traceActivation ngapType.TraceActivation) {
+func TraceDataToNgap(traceData models.TraceData, trsr string) ngapType.TraceActivation {
+	var traceActivation ngapType.TraceActivation
 
 	if len(trsr) != 4 {
 		logger.NgapLog.Warningln("Trace Recording Session Reference should be 2 octets")
-		return
+		return traceActivation
 	}
 
 	//NG-RAN Trace ID (left most 6 octet Trace Reference + last 2 octet Trace Recoding Session Reference)
@@ -26,24 +27,39 @@ func TraceDataToNgap(traceData models.TraceData, trsr string) (traceActivation n
 
 	if len(subStringSlice) != 2 {
 		logger.NgapLog.Warningln("TraceRef format is not correct")
-		return
+		return traceActivation
 	}
 
 	plmnID := models.PlmnId{}
 	plmnID.Mcc = subStringSlice[0][:3]
 	plmnID.Mnc = subStringSlice[0][3:]
-	traceID, _ := hex.DecodeString(subStringSlice[1])
+	var traceID []byte
+	if traceIDTmp, err := hex.DecodeString(subStringSlice[1]); err != nil {
+		logger.NgapLog.Warnf("")
+	} else {
+		traceID = traceIDTmp
+	}
 
 	tmp := PlmnIdToNgap(plmnID)
 	traceReference := append(tmp.Value, traceID...)
-	trsrNgap, _ := hex.DecodeString(trsr)
+	var trsrNgap []byte
+	if trsrNgapTmp, err := hex.DecodeString(trsr); err != nil {
+		logger.NgapLog.Warnf("Decode trsr failed: %+v", err)
+	} else {
+		trsrNgap = trsrNgapTmp
+	}
 
 	nGRANTraceID := append(traceReference, trsrNgap...)
 
 	traceActivation.NGRANTraceID.Value = nGRANTraceID
 
 	// Interfaces To Trace
-	interfacesToTrace, _ := hex.DecodeString(traceData.InterfaceList)
+	var interfacesToTrace []byte
+	if interfacesToTraceTmp, err := hex.DecodeString(traceData.InterfaceList); err != nil {
+		logger.NgapLog.Warnf("Decode Interface failed: %+v", err)
+	} else {
+		interfacesToTrace = interfacesToTraceTmp
+	}
 	traceActivation.InterfacesToTrace.Value = aper.BitString{
 		Bytes:     interfacesToTrace,
 		BitLength: 8,
@@ -69,5 +85,5 @@ func TraceDataToNgap(traceData models.TraceData, trsr string) (traceActivation n
 		traceActivation.TraceDepth.Value = ngapType.TraceDepthPresentMaximumWithoutVendorSpecificExtension
 	}
 
-	return
+	return traceActivation
 }

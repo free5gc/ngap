@@ -22,7 +22,11 @@ func HexToBitString(hexString string, bitLength int) (bitString aper.BitString) 
 	if hexLen%2 == 1 {
 		hexString += "0"
 	}
-	bitString.Bytes, _ = hex.DecodeString(hexString)
+	if byteTmp, err := hex.DecodeString(hexString); err != nil {
+		logger.NgapLog.Warnf("Decode byteString failed: %+v", err)
+	} else {
+		bitString.Bytes = byteTmp
+	}
 	bitString.BitLength = uint64(bitLength)
 	mask := byte(0xff)
 	mask = mask << uint(8-bitLength%8)

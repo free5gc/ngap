@@ -2,6 +2,7 @@ package ngapConvert
 
 import (
 	"encoding/hex"
+	"free5gc/lib/ngap/logger"
 	"free5gc/lib/ngap/ngapType"
 	"free5gc/lib/openapi/models"
 	"strings"
@@ -18,7 +19,7 @@ func PlmnIdToModels(ngapPlmnId ngapType.PLMNIdentity) (modelsPlmnid models.PlmnI
 	}
 	return
 }
-func PlmnIdToNgap(modelsPlmnid models.PlmnId) (ngapPlmnId ngapType.PLMNIdentity) {
+func PlmnIdToNgap(modelsPlmnid models.PlmnId) ngapType.PLMNIdentity {
 	var hexString string
 	mcc := strings.Split(modelsPlmnid.Mcc, "")
 	mnc := strings.Split(modelsPlmnid.Mnc, "")
@@ -27,6 +28,12 @@ func PlmnIdToNgap(modelsPlmnid models.PlmnId) (ngapPlmnId ngapType.PLMNIdentity)
 	} else {
 		hexString = mcc[1] + mcc[0] + mnc[0] + mcc[2] + mnc[2] + mnc[1]
 	}
-	ngapPlmnId.Value, _ = hex.DecodeString(hexString)
-	return
+
+	var ngapPlmnId ngapType.PLMNIdentity
+	if plmnId, err := hex.DecodeString(hexString); err != nil {
+		logger.NgapLog.Warnf("Decode plmn failed: %+v", err)
+	} else {
+		ngapPlmnId.Value = plmnId
+	}
+	return ngapPlmnId
 }

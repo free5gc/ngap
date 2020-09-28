@@ -46,10 +46,11 @@ func RanIdToModels(ranNodeId ngapType.GlobalRANNodeID) (ranId models.GlobalRanNo
 		}
 	}
 
-	return
+	return ranId
 }
 
-func RanIDToNgap(modelsRanNodeId models.GlobalRanNodeId) (ngapRanNodeId ngapType.GlobalRANNodeID) {
+func RanIDToNgap(modelsRanNodeId models.GlobalRanNodeId) ngapType.GlobalRANNodeID {
+	var ngapRanNodeId ngapType.GlobalRANNodeID
 
 	if modelsRanNodeId.GNbId.BitLength != 0 {
 		ngapRanNodeId.Present = ngapType.GlobalRANNodeIDPresentGlobalGNBID
@@ -92,5 +93,5 @@ func RanIDToNgap(modelsRanNodeId models.GlobalRanNodeId) (ngapRanNodeId ngapType
 		*globalN3IWFID.N3IWFID.N3IWFID = HexToBitString(modelsRanNodeId.N3IwfId, len(modelsRanNodeId.N3IwfId)*4)
 	}
 
-	return
+	return ngapRanNodeId
 }
