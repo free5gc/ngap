@@ -1399,7 +1399,7 @@ type NGSetupRequestIEsValue struct {
 	RANNodeName            *RANNodeName            `aper:"referenceFieldValue:82"`
 	SupportedTAList        *SupportedTAList        `aper:"referenceFieldValue:102"`
 	DefaultPagingDRX       *PagingDRX              `aper:"referenceFieldValue:21"`
-	UERetentionInformation *UERetentionInformation /* Do not find the Reference Field Value */
+	UERetentionInformation *UERetentionInformation `aper:"referenceFieldValue:147"`
 }
 
 type NGSetupResponseIEs struct {
@@ -1425,7 +1425,7 @@ type NGSetupResponseIEsValue struct {
 	RelativeAMFCapacity    *RelativeAMFCapacity    `aper:"referenceFieldValue:86"`
 	PLMNSupportList        *PLMNSupportList        `aper:"referenceFieldValue:80"`
 	CriticalityDiagnostics *CriticalityDiagnostics `aper:"valueExt,referenceFieldValue:19"`
-	UERetentionInformation *UERetentionInformation /* Do not find the Reference Field Value */
+	UERetentionInformation *UERetentionInformation `aper:"referenceFieldValue:147"`
 }
 
 type NGSetupFailureIEs struct {
