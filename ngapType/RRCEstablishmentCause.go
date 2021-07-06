@@ -19,5 +19,5 @@ const (
 )
 
 type RRCEstablishmentCause struct {
-	Value aper.Enumerated `aper:"valueExt,valueLB:0,valueUB:10"`
+	Value aper.Enumerated `aper:"valueExt,valueLB:0,valueUB:9"`
 }
