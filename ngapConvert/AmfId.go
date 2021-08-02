@@ -1,9 +1,10 @@
 package ngapConvert
 
 import (
+	"encoding/hex"
+
 	"github.com/free5gc/aper"
 	"github.com/free5gc/ngap/logger"
-	"encoding/hex"
 )
 
 func AmfIdToNgap(amfId string) (regionId, setId, ptrId aper.BitString) {

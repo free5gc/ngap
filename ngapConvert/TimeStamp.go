@@ -1,9 +1,10 @@
 package ngapConvert
 
 import (
+	"encoding/binary"
+
 	"github.com/free5gc/aper"
 	"github.com/free5gc/ngap/logger"
-	"encoding/binary"
 )
 
 /*
@@ -36,7 +37,6 @@ RFC 5905 Section 6 https://tools.ietf.org/html/rfc5905#section-6
 
 */
 func TimeStampToInt32(timeStampNgap aper.OctetString) (timeStamp int32) {
-
 	if len(timeStampNgap) != 4 {
 		logger.NgapLog.Error("TimeStampToInt32: the size of OctetString is not 4")
 	}

@@ -1,12 +1,13 @@
 package ngapConvert
 
 import (
+	"encoding/hex"
+	"strings"
+
 	"github.com/free5gc/aper"
 	"github.com/free5gc/ngap/logger"
 	"github.com/free5gc/ngap/ngapType"
 	"github.com/free5gc/openapi/models"
-	"encoding/hex"
-	"strings"
 )
 
 func TraceDataToModels(traceActivation ngapType.TraceActivation) (traceData models.TraceData) {
@@ -22,7 +23,7 @@ func TraceDataToNgap(traceData models.TraceData, trsr string) ngapType.TraceActi
 		return traceActivation
 	}
 
-	//NG-RAN Trace ID (left most 6 octet Trace Reference + last 2 octet Trace Recoding Session Reference)
+	// NG-RAN Trace ID (left most 6 octet Trace Reference + last 2 octet Trace Recoding Session Reference)
 	subStringSlice := strings.Split(traceData.TraceRef, "-")
 
 	if len(subStringSlice) != 2 {

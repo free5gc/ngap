@@ -1,11 +1,12 @@
 package ngapConvert
 
 import (
+	"encoding/hex"
+	"strings"
+
 	"github.com/free5gc/ngap/logger"
 	"github.com/free5gc/ngap/ngapType"
 	"github.com/free5gc/openapi/models"
-	"encoding/hex"
-	"strings"
 )
 
 func PlmnIdToModels(ngapPlmnId ngapType.PLMNIdentity) (modelsPlmnid models.PlmnId) {
@@ -19,6 +20,7 @@ func PlmnIdToModels(ngapPlmnId ngapType.PLMNIdentity) (modelsPlmnid models.PlmnI
 	}
 	return
 }
+
 func PlmnIdToNgap(modelsPlmnid models.PlmnId) ngapType.PLMNIdentity {
 	var hexString string
 	mcc := strings.Split(modelsPlmnid.Mcc, "")
