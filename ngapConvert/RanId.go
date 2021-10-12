@@ -30,12 +30,10 @@ func RanIdToModels(ranNodeId ngapType.GlobalRANNodeID) (ranId models.GlobalRanNo
 		} else if ngapNgENBID.NgENBID.Present == ngapType.NgENBIDPresentShortMacroNgENBID {
 			shortMacroNgENBID := ngapNgENBID.NgENBID.ShortMacroNgENBID
 			ranId.NgeNbId = "SMacroNGeNB-" + BitStringToHex(shortMacroNgENBID)
-
 		} else if ngapNgENBID.NgENBID.Present == ngapType.NgENBIDPresentLongMacroNgENBID {
 			longMacroNgENBID := ngapNgENBID.NgENBID.LongMacroNgENBID
 			ranId.NgeNbId = "LMacroNGeNB-" + BitStringToHex(longMacroNgENBID)
 		}
-
 	case ngapType.GlobalRANNodeIDPresentGlobalN3IWFID:
 		ngapN3IWFID := ranNodeId.GlobalN3IWFID
 		plmnid := PlmnIdToModels(ngapN3IWFID.PLMNIdentity)
@@ -61,7 +59,6 @@ func RanIDToNgap(modelsRanNodeId models.GlobalRanNodeId) ngapType.GlobalRANNodeI
 		globalGNBID.GNBID.Present = ngapType.GNBIDPresentGNBID
 		globalGNBID.GNBID.GNBID = new(aper.BitString)
 		*globalGNBID.GNBID.GNBID = HexToBitString(modelsRanNodeId.GNbId.GNBValue, int(modelsRanNodeId.GNbId.BitLength))
-
 	} else if modelsRanNodeId.NgeNbId != "" {
 		ngapRanNodeId.Present = ngapType.GlobalRANNodeIDPresentGlobalNgENBID
 		ngapRanNodeId.GlobalNgENBID = new(ngapType.GlobalNgENBID)

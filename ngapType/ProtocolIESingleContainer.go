@@ -3,105 +3,79 @@ package ngapType
 // Need to import "github.com/free5gc/aper" if it uses "aper"
 
 // Open type declare
-type ProtocolIESingleContainerAMFPagingTargetExtIEs struct {
-}
+type ProtocolIESingleContainerAMFPagingTargetExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerBroadcastCancelledAreaListExtIEs struct {
-}
+type ProtocolIESingleContainerBroadcastCancelledAreaListExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerBroadcastCompletedAreaListExtIEs struct {
-}
+type ProtocolIESingleContainerBroadcastCompletedAreaListExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerCauseExtIEs struct {
-}
+type ProtocolIESingleContainerCauseExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerCellIDListForRestartExtIEs struct {
-}
+type ProtocolIESingleContainerCellIDListForRestartExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerCPTransportLayerInformationExtIEs struct {
-}
+type ProtocolIESingleContainerCPTransportLayerInformationExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerDRBStatusDLExtIEs struct {
-}
+type ProtocolIESingleContainerDRBStatusDLExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerDRBStatusULExtIEs struct {
-}
+type ProtocolIESingleContainerDRBStatusULExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerGlobalRANNodeIDExtIEs struct {
-}
+type ProtocolIESingleContainerGlobalRANNodeIDExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerGNBIDExtIEs struct {
-}
+type ProtocolIESingleContainerGNBIDExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerLastVisitedCellInformationExtIEs struct {
-}
+type ProtocolIESingleContainerLastVisitedCellInformationExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerN3IWFIDExtIEs struct {
-}
+type ProtocolIESingleContainerN3IWFIDExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerNgENBIDExtIEs struct {
-}
+type ProtocolIESingleContainerNgENBIDExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerNGRANCGIExtIEs struct {
-}
+type ProtocolIESingleContainerNGRANCGIExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerOverloadResponseExtIEs struct {
-}
+type ProtocolIESingleContainerOverloadResponseExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerPWSFailedCellIDListExtIEs struct {
-}
+type ProtocolIESingleContainerPWSFailedCellIDListExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerQosCharacteristicsExtIEs struct {
-}
+type ProtocolIESingleContainerQosCharacteristicsExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerResetTypeExtIEs struct {
-}
+type ProtocolIESingleContainerResetTypeExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerSONInformationExtIEs struct {
-}
+type ProtocolIESingleContainerSONInformationExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerTargetIDExtIEs struct {
-}
+type ProtocolIESingleContainerTargetIDExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerUEIdentityIndexValueExtIEs struct {
-}
+type ProtocolIESingleContainerUEIdentityIndexValueExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerUENGAPIDsExtIEs struct {
-}
+type ProtocolIESingleContainerUENGAPIDsExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerUEPagingIdentityExtIEs struct {
-}
+type ProtocolIESingleContainerUEPagingIdentityExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerUPTransportLayerInformationExtIEs struct {
-}
+type ProtocolIESingleContainerUPTransportLayerInformationExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerUserLocationInformationExtIEs struct {
-}
+type ProtocolIESingleContainerUserLocationInformationExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerWarningAreaListExtIEs struct {
-}
+type ProtocolIESingleContainerWarningAreaListExtIEs struct{}

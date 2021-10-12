@@ -26,7 +26,6 @@ func Encoder(pdu ngapType.NGAPPDU) ([]byte, error) {
 }
 
 func PrintResult(v reflect.Value, layer int) string {
-
 	fieldType := v.Type()
 	if v.Kind() == reflect.Ptr {
 		return "&" + PrintResult(v.Elem(), layer)
@@ -85,7 +84,6 @@ func PrintResult(v reflect.Value, layer int) string {
 		s = fmt.Sprintf("INTEGER(%d)\n", v.Int())
 	default:
 		fmt.Printf("Type: %s does not handle", v.Type())
-
 	}
 	return s
 }

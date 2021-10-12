@@ -1,14 +1,14 @@
 package ngapConvert
 
 import (
+	"net"
+
 	"github.com/free5gc/aper"
 	"github.com/free5gc/ngap/logger"
 	"github.com/free5gc/ngap/ngapType"
-	"net"
 )
 
 func IPAddressToString(ipAddr ngapType.TransportLayerAddress) (ipv4Addr, ipv6Addr string) {
-
 	ip := ipAddr.Value
 
 	// Described in 38.414

@@ -633,7 +633,7 @@ type InitialContextSetupRequestIEsValue struct {
 	EmergencyFallbackIndicator         *EmergencyFallbackIndicator         `aper:"valueExt,referenceFieldValue:24"`
 	RRCInactiveTransitionReportRequest *RRCInactiveTransitionReportRequest `aper:"referenceFieldValue:91"`
 	UERadioCapabilityForPaging         *UERadioCapabilityForPaging         `aper:"valueExt,referenceFieldValue:118"`
-	RedirectionVoiceFallback           *RedirectionVoiceFallback           /* Do not find the Reference Field Value */
+	RedirectionVoiceFallback           *RedirectionVoiceFallback           `aper:"referenceFieldValue:146"`
 }
 
 type InitialContextSetupResponseIEs struct {
@@ -985,7 +985,7 @@ type HandoverRequestIEsValue struct {
 	LocationReportingRequestType       *LocationReportingRequestType       `aper:"valueExt,referenceFieldValue:33"`
 	RRCInactiveTransitionReportRequest *RRCInactiveTransitionReportRequest `aper:"referenceFieldValue:91"`
 	GUAMI                              *GUAMI                              `aper:"valueExt,referenceFieldValue:28"`
-	RedirectionVoiceFallback           *RedirectionVoiceFallback           /* Do not find the Reference Field Value */
+	RedirectionVoiceFallback           *RedirectionVoiceFallback           `aper:"referenceFieldValue:146"`
 }
 
 type HandoverRequestAcknowledgeIEs struct {
@@ -1115,7 +1115,7 @@ type PathSwitchRequestAcknowledgeIEsValue struct {
 	CoreNetworkAssistanceInformation    *CoreNetworkAssistanceInformation    `aper:"valueExt,referenceFieldValue:18"`
 	RRCInactiveTransitionReportRequest  *RRCInactiveTransitionReportRequest  `aper:"referenceFieldValue:91"`
 	CriticalityDiagnostics              *CriticalityDiagnostics              `aper:"valueExt,referenceFieldValue:19"`
-	RedirectionVoiceFallback            *RedirectionVoiceFallback            /* Do not find the Reference Field Value */
+	RedirectionVoiceFallback            *RedirectionVoiceFallback            `aper:"referenceFieldValue:146"`
 }
 
 type PathSwitchRequestFailureIEs struct {
