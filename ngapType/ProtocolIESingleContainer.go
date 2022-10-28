@@ -56,6 +56,18 @@ type ProtocolIESingleContainerNgENBIDExtIEs struct{}
 type ProtocolIESingleContainerNGRANCGIExtIEs struct{}
 
 // Open type declare
+type ProtocolIESingleContainerNPNAccessInformationExtIEs struct{}
+
+// Open type declare
+type ProtocolIESingleContainerNPNMobilityInformationExtIEs struct{}
+
+// Open type declare
+type ProtocolIESingleContainerNPNPagingAssistanceInformationExtIEs struct{}
+
+// Open type declare
+type ProtocolIESingleContainerNPNSupportExtIEs struct{}
+
+// Open type declare
 type ProtocolIESingleContainerOverloadResponseExtIEs struct{}
 
 // Open type declare

@@ -962,6 +962,12 @@ type ProtocolExtensionContainerSliceSupportItemExtIEs struct {
 	List []SliceSupportItemExtIEs `aper:"sizeLB:1,sizeUB:65535"`
 }
 
+/* Sequence of = 35, FULL Name = struct ProtocolExtensionContainer_9614P237 */
+/* SNPNMobilityInformationExtIEs */
+type ProtocolExtensionContainerSNPNMobilityInformationExtIEs struct {
+	List []SNPNMobilityInformationExtIEs `aper:"sizeLB:1,sizeUB:65535"`
+}
+
 /* Sequence of = 35, FULL Name = struct ProtocolExtensionContainer_6706P156 */
 /* SNSSAIExtIEs */
 type ProtocolExtensionContainerSNSSAIExtIEs struct {
