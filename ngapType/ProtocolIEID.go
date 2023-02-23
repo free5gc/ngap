@@ -165,4 +165,11 @@ const (
 	ProtocolIEIDSecurityResult                             int64 = 156
 	ProtocolIEIDENDCSONConfigurationTransferDL             int64 = 157
 	ProtocolIEIDENDCSONConfigurationTransferUL             int64 = 158
+	ProtocolIEIDNPNSupport                                 int64 = 258
+	ProtocolIEIDNPNAccessInformation                       int64 = 259
+	ProtocolIEIDNPNPagingAssistanceInformation             int64 = 260
+	ProtocolIEIDNPNMobilityInformation                     int64 = 261
+	ProtocolIEIDNID                                        int64 = 263
+	ProtocolIEIDExtendedSliceSupportList                   int64 = 270
+	ProtocolIEIDExtendedTAISliceSupportList                int64 = 271
 )
