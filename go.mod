@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/antonfisher/nested-logrus-formatter v1.3.1
-	github.com/free5gc/aper v1.0.5-0.20230228165147-f3c3102d0367
+	github.com/free5gc/aper v1.0.5-0.20230613151242-a2b93630a4ee
 	github.com/free5gc/openapi v1.0.6
 	github.com/sirupsen/logrus v1.8.1
 	github.com/stretchr/testify v1.7.0
