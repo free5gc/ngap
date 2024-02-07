@@ -42,6 +42,34 @@ func RanIdToModels(ranNodeId ngapType.GlobalRANNodeID) (ranId models.GlobalRanNo
 			choiceN3IWFID := ngapN3IWFID.N3IWFID.N3IWFID
 			ranId.N3IwfId = BitStringToHex(choiceN3IWFID)
 		}
+	case ngapType.GlobalRANNodeIDPresentChoiceExtensions:
+		switch ranNodeId.ChoiceExtensions.GlobalRANNodeIDExtIEs.Value.Present {
+		case ngapType.GlobalRANNodeIDExtIEsPresentGlobalTNGFID:
+			ngapTNGFID := ranNodeId.ChoiceExtensions.GlobalRANNodeIDExtIEs.Value.GlobalTNGFID
+			plmnid := PlmnIdToModels(ngapTNGFID.PLMNIdentity)
+			ranId.PlmnId = &plmnid
+			if ngapTNGFID.TNGFID.Present == ngapType.TNGFIDPresentTNGFID {
+				choiceTNGFID := ngapTNGFID.TNGFID.TNGFID
+				ranId.TngfId = BitStringToHex(choiceTNGFID)
+			}
+		case ngapType.GlobalRANNodeIDExtIEsPresentGlobalTWIFID:
+			ngapTWIFID := ranNodeId.ChoiceExtensions.GlobalRANNodeIDExtIEs.Value.GlobalTWIFID
+			plmnid := PlmnIdToModels(ngapTWIFID.PLMNIdentity)
+			ranId.PlmnId = &plmnid
+			if ngapTWIFID.TWIFID.Present == ngapType.TWIFIDPresentTWIFID {
+				choiceTWIFID := ngapTWIFID.TWIFID.TWIFID
+				ranId.TwifId = BitStringToHex(choiceTWIFID)
+			}
+		case ngapType.GlobalRANNodeIDExtIEsPresentGlobalWAGFID:
+			ngapWAGFID := ranNodeId.ChoiceExtensions.GlobalRANNodeIDExtIEs.Value.GlobalWAGFID
+			plmnid := PlmnIdToModels(ngapWAGFID.PLMNIdentity)
+			ranId.PlmnId = &plmnid
+			if ngapWAGFID.WAGFID.Present == ngapType.WAGFIDPresentWAGFID {
+				choiceWAGFID := ngapWAGFID.WAGFID.WAGFID
+				ranId.WagfId = BitStringToHex(choiceWAGFID)
+			}
+
+		}
 	}
 
 	return ranId
