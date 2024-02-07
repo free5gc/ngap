@@ -165,4 +165,10 @@ const (
 	ProtocolIEIDSecurityResult                             int64 = 156
 	ProtocolIEIDENDCSONConfigurationTransferDL             int64 = 157
 	ProtocolIEIDENDCSONConfigurationTransferUL             int64 = 158
+	ProtocolIEIDGlobalTNGFID                               int64 = 240
+	ProtocolIEIDGlobalTWIFID                               int64 = 241
+	ProtocolIEIDGlobalWAGFID                               int64 = 242
+	ProtocolIEIDUserLocationInformationWAGF                int64 = 243
+	ProtocolIEIDUserLocationInformationTNGF                int64 = 244
+	ProtocolIEIDUserLocationInformationTWIF                int64 = 248
 )
