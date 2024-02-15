@@ -2679,17 +2679,17 @@ type UserLocationInformationN3IWFExtIEsExtensionValue struct {
 }
 
 type GlobalLineIDExtIEs struct {    /* Sequence Type */
-    Id  ProtocolExtensionID
-    Criticality Criticality
-    ExtensionValue  GlobalLineIDExtIEsExtensionValue `aper:"openType,referenceFieldName:Id"`
+	Id  ProtocolExtensionID
+	Criticality Criticality
+	ExtensionValue  GlobalLineIDExtIEsExtensionValue `aper:"openType,referenceFieldName:Id"`
 }
 
 const (
-    GlobalLineIDExtIEsPresentNothing    int = iota  /* No components present */
+	GlobalLineIDExtIEsPresentNothing    int = iota  /* No components present */
 )
 
 type GlobalLineIDExtIEsExtensionValue struct {
-    Present int /* Open Type */
+	Present int /* Open Type */
 }
 
 type UserLocationInformationTNGFExtIEs struct {

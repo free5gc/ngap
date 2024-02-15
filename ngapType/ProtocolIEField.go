@@ -125,15 +125,15 @@ type GlobalRANNodeIDExtIEs struct {
 const (
 	GlobalRANNodeIDExtIEsPresentNothing int = iota /* No components present */
 	GlobalRANNodeIDExtIEsPresentGlobalTNGFID
-    GlobalRANNodeIDExtIEsPresentGlobalTWIFID
-    GlobalRANNodeIDExtIEsPresentGlobalWAGFID
+	GlobalRANNodeIDExtIEsPresentGlobalTWIFID
+	GlobalRANNodeIDExtIEsPresentGlobalWAGFID
 )
 
 type GlobalRANNodeIDExtIEsValue struct {
 	Present int
 	GlobalTNGFID    *GlobalTNGFID `aper:"valueExt,referenceFieldValue:240"`
-    GlobalTWIFID    *GlobalTWIFID `aper:"valueExt,referenceFieldValue:241"`
-    GlobalWAGFID    *GlobalWAGFID `aper:"valueExt,referenceFieldValue:242"`
+	GlobalTWIFID    *GlobalTWIFID `aper:"valueExt,referenceFieldValue:241"`
+	GlobalWAGFID    *GlobalWAGFID `aper:"valueExt,referenceFieldValue:242"`
 }
 
 type GNBIDExtIEs struct {

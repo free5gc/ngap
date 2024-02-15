@@ -353,7 +353,7 @@ type ProtocolExtensionContainerGlobalN3IWFIDExtIEs struct {
 /* Sequence of = 35, FULL Name = struct ProtocolExtensionContainer_9611P88 */
 /* GlobalLineIDExtIEs */
 type ProtocolExtensionContainerGlobalLineIDExtIEs struct {
-    List []GlobalLineIDExtIEs `aper:"sizeLB:1,sizeUB:65535"`
+	List []GlobalLineIDExtIEs `aper:"sizeLB:1,sizeUB:65535"`
 }
 
 /* Sequence of = 35, FULL Name = struct ProtocolExtensionContainer_6706P57 */
