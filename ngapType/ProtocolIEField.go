@@ -130,10 +130,10 @@ const (
 )
 
 type GlobalRANNodeIDExtIEsValue struct {
-	Present int
-	GlobalTNGFID    *GlobalTNGFID `aper:"valueExt,referenceFieldValue:240"`
-	GlobalTWIFID    *GlobalTWIFID `aper:"valueExt,referenceFieldValue:241"`
-	GlobalWAGFID    *GlobalWAGFID `aper:"valueExt,referenceFieldValue:242"`
+	Present      int
+	GlobalTNGFID *GlobalTNGFID `aper:"valueExt,referenceFieldValue:240"`
+	GlobalTWIFID *GlobalTWIFID `aper:"valueExt,referenceFieldValue:241"`
+	GlobalWAGFID *GlobalWAGFID `aper:"valueExt,referenceFieldValue:242"`
 }
 
 type GNBIDExtIEs struct {
@@ -353,17 +353,17 @@ type UserLocationInformationExtIEs struct {
 }
 
 const (
-	UserLocationInformationExtIEsPresentNothing	int = iota	/* No components present */
+	UserLocationInformationExtIEsPresentNothing int = iota /* No components present */
 	UserLocationInformationExtIEsPresentUserLocationInformationTNGF
 	UserLocationInformationExtIEsPresentUserLocationInformationTWIF
 	UserLocationInformationExtIEsPresentUserLocationInformationWAGF
 )
 
 type UserLocationInformationExtIEsValue struct {
-	Present int
-	UserLocationInformationTNGF	*UserLocationInformationTNGF `aper:"valueExt,referenceFieldValue:244"`
-	UserLocationInformationTWIF	*UserLocationInformationTWIF `aper:"valueExt,referenceFieldValue:248"`
-	UserLocationInformationWAGF	*UserLocationInformationWAGF `aper:"referenceFieldValue:243,valueLB:0,valueUB:2"`
+	Present                     int
+	UserLocationInformationTNGF *UserLocationInformationTNGF `aper:"valueExt,referenceFieldValue:244"`
+	UserLocationInformationTWIF *UserLocationInformationTWIF `aper:"valueExt,referenceFieldValue:248"`
+	UserLocationInformationWAGF *UserLocationInformationWAGF `aper:"referenceFieldValue:243,valueLB:0,valueUB:2"`
 }
 
 type WarningAreaListExtIEs struct {

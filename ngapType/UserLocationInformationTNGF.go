@@ -5,6 +5,6 @@ package ngapType
 type UserLocationInformationTNGF struct {
 	TNAPID       TNAPID
 	IPAddress    TransportLayerAddress
-	PortNumber   *PortNumber `aper:"optional"`
+	PortNumber   *PortNumber                                                  `aper:"optional"`
 	IEExtensions *ProtocolExtensionContainerUserLocationInformationTNGFExtIEs `aper:"optional"`
 }

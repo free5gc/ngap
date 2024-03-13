@@ -27,7 +27,7 @@ type ProtocolIESingleContainerDRBStatusDLExtIEs struct{}
 type ProtocolIESingleContainerDRBStatusULExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerGlobalRANNodeIDExtIEs struct{
+type ProtocolIESingleContainerGlobalRANNodeIDExtIEs struct {
 	GlobalRANNodeIDExtIEs *GlobalRANNodeIDExtIEs
 }
 
@@ -86,12 +86,12 @@ type ProtocolIESingleContainerUEPagingIdentityExtIEs struct{}
 type ProtocolIESingleContainerUPTransportLayerInformationExtIEs struct{}
 
 // Open type declare
-type ProtocolIESingleContainerUserLocationInformationExtIEs struct{
+type ProtocolIESingleContainerUserLocationInformationExtIEs struct {
 	UserLocationInformationExtIEs *UserLocationInformationExtIEs
 }
 
 // Open type declare
-type ProtocolIESingleContainerUserLocationInformationWAGFExtIEs struct {}
+type ProtocolIESingleContainerUserLocationInformationWAGFExtIEs struct{}
 
 // Open type declare
 type ProtocolIESingleContainerWarningAreaListExtIEs struct{}
