@@ -68,7 +68,6 @@ func RanIdToModels(ranNodeId ngapType.GlobalRANNodeID) (ranId models.GlobalRanNo
 				choiceWAGFID := ngapWAGFID.WAGFID.WAGFID
 				ranId.WagfId = BitStringToHex(choiceWAGFID)
 			}
-
 		}
 	}
 
