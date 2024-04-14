@@ -816,6 +816,48 @@ type GlobalN3IWFIDExtIEsExtensionValue struct {
 	Present int
 }
 
+type GlobalTNGFIDExtIEs struct {
+	Id             ProtocolExtensionID
+	Criticality    Criticality
+	ExtensionValue GlobalTNGFIDExtIEsExtensionValue `aper:"openType,referenceFieldName:Id"`
+}
+
+const (
+	GlobalTNGFIDExtIEsPresentNothing int = iota /* No components present */
+)
+
+type GlobalTNGFIDExtIEsExtensionValue struct {
+	Present int
+}
+
+type GlobalTWIFIDExtIEs struct {
+	Id             ProtocolExtensionID
+	Criticality    Criticality
+	ExtensionValue GlobalTWIFIDExtIEsExtensionValue `aper:"openType,referenceFieldName:Id"`
+}
+
+const (
+	GlobalTWIFIDExtIEsPresentNothing int = iota /* No components present */
+)
+
+type GlobalTWIFIDExtIEsExtensionValue struct {
+	Present int
+}
+
+type GlobalWAGFIDExtIEs struct {
+	Id             ProtocolExtensionID
+	Criticality    Criticality
+	ExtensionValue GlobalWAGFIDExtIEsExtensionValue `aper:"openType,referenceFieldName:Id"`
+}
+
+const (
+	GlobalWAGFIDExtIEsPresentNothing int = iota /* No components present */
+)
+
+type GlobalWAGFIDExtIEsExtensionValue struct {
+	Present int
+}
+
 type GlobalNgENBIDExtIEs struct {
 	Id             ProtocolExtensionID
 	Criticality    Criticality
@@ -2633,6 +2675,48 @@ const (
 )
 
 type UserLocationInformationN3IWFExtIEsExtensionValue struct {
+	Present int
+}
+
+type GlobalLineIDExtIEs struct { /* Sequence Type */
+	Id             ProtocolExtensionID
+	Criticality    Criticality
+	ExtensionValue GlobalLineIDExtIEsExtensionValue `aper:"openType,referenceFieldName:Id"`
+}
+
+const (
+	GlobalLineIDExtIEsPresentNothing int = iota /* No components present */
+)
+
+type GlobalLineIDExtIEsExtensionValue struct {
+	Present int /* Open Type */
+}
+
+type UserLocationInformationTNGFExtIEs struct {
+	Id             ProtocolExtensionID
+	Criticality    Criticality
+	ExtensionValue UserLocationInformationTNGFExtIEsExtensionValue `aper:"openType,referenceFieldName:Id"`
+}
+
+const (
+	UserLocationInformationTNGFExtIEsPresentNothing int = iota /* No components present */
+)
+
+type UserLocationInformationTNGFExtIEsExtensionValue struct {
+	Present int
+}
+
+type UserLocationInformationTWIFExtIEs struct {
+	Id             ProtocolExtensionID
+	Criticality    Criticality
+	ExtensionValue UserLocationInformationTWIFExtIEsExtensionValue `aper:"openType,referenceFieldName:Id"`
+}
+
+const (
+	UserLocationInformationTWIFExtIEsPresentNothing int = iota /* No components present */
+)
+
+type UserLocationInformationTWIFExtIEsExtensionValue struct {
 	Present int
 }
 

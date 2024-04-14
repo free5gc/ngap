@@ -350,6 +350,30 @@ type ProtocolExtensionContainerGlobalN3IWFIDExtIEs struct {
 	List []GlobalN3IWFIDExtIEs `aper:"sizeLB:1,sizeUB:65535"`
 }
 
+/* Sequence of = 35, FULL Name = struct ProtocolExtensionContainer_9611P88 */
+/* GlobalLineIDExtIEs */
+type ProtocolExtensionContainerGlobalLineIDExtIEs struct {
+	List []GlobalLineIDExtIEs `aper:"sizeLB:1,sizeUB:65535"`
+}
+
+/* Sequence of = 35, FULL Name = struct ProtocolExtensionContainer_6706P57 */
+/* GlobalTNGFIDExtIEs */
+type ProtocolExtensionContainerGlobalTNGFIDExtIEs struct {
+	List []GlobalTNGFIDExtIEs `aper:"sizeLB:1,sizeUB:65535"`
+}
+
+/* Sequence of = 35, FULL Name = struct ProtocolExtensionContainer_6706P57 */
+/* GlobalTWIFIDExtIEs */
+type ProtocolExtensionContainerGlobalTWIFIDExtIEs struct {
+	List []GlobalTWIFIDExtIEs `aper:"sizeLB:1,sizeUB:65535"`
+}
+
+/* Sequence of = 35, FULL Name = struct ProtocolExtensionContainer_6706P57 */
+/* GlobalWAGFIDExtIEs */
+type ProtocolExtensionContainerGlobalWAGFIDExtIEs struct {
+	List []GlobalWAGFIDExtIEs `aper:"sizeLB:1,sizeUB:65535"`
+}
+
 /* Sequence of = 35, FULL Name = struct ProtocolExtensionContainer_6706P58 */
 /* GlobalNgENBIDExtIEs */
 type ProtocolExtensionContainerGlobalNgENBIDExtIEs struct {
@@ -1116,6 +1140,18 @@ type ProtocolExtensionContainerUserLocationInformationEUTRAExtIEs struct {
 /* UserLocationInformationN3IWFExtIEs */
 type ProtocolExtensionContainerUserLocationInformationN3IWFExtIEs struct {
 	List []UserLocationInformationN3IWFExtIEs `aper:"sizeLB:1,sizeUB:65535"`
+}
+
+/* Sequence of = 35, FULL Name = struct ProtocolExtensionContainer_6706P185 */
+/* UserLocationInformationTNGFExtIEs */
+type ProtocolExtensionContainerUserLocationInformationTNGFExtIEs struct {
+	List []UserLocationInformationTNGFExtIEs `aper:"sizeLB:1,sizeUB:65535"`
+}
+
+/* Sequence of = 35, FULL Name = struct ProtocolExtensionContainer_6706P185 */
+/* UserLocationInformationTWIFExtIEs */
+type ProtocolExtensionContainerUserLocationInformationTWIFExtIEs struct {
+	List []UserLocationInformationTWIFExtIEs `aper:"sizeLB:1,sizeUB:65535"`
 }
 
 /* Sequence of = 35, FULL Name = struct ProtocolExtensionContainer_6706P186 */
