@@ -5,6 +5,6 @@ package ngapType
 type UnavailableGUAMIItem struct {
 	GUAMI                        GUAMI                                                 `aper:"valueExt"`
 	TimerApproachForGUAMIRemoval *TimerApproachForGUAMIRemoval                         `aper:"optional"`
-	BackupAMFName                *AMFName                                              `aper:"sizeExt,sizeLB:1,sizeUB:150,optional"`
+	BackupAMFName                *AMFName                                              `aper:"optional"`
 	IEExtensions                 *ProtocolExtensionContainerUnavailableGUAMIItemExtIEs `aper:"optional"`
 }
