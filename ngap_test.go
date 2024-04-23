@@ -7,6 +7,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
+	"github.com/free5gc/aper"
 	"github.com/free5gc/ngap/ngapType"
 )
 
@@ -97,6 +98,86 @@ func TestDecoder(t *testing.T) {
 											Present: ngapType.NGSetupRequestIEsPresentRANNodeName,
 											RANNodeName: &ngapType.RANNodeName{
 												Value: "TEST",
+											},
+										},
+									},
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+		{
+			name: "Test AMFStatusIndication with BackupAMFName IE",
+			args: args{
+				b: []byte{
+					0x00, 0x01, 0x40, 0x15, 0x00, 0x00, 0x01, 0x00, 0x78, 0x00, 0x0e, 0x00, 0x20, 0x02,
+					0xf8, 0x39, 0xca, 0xfe, 0x00, 0x01, 0x80, 0x41, 0x4d, 0x46, 0x31, 0x00, 0x00, 0x00,
+				},
+			},
+			wantPdu: &ngapType.NGAPPDU{
+				Present: ngapType.NGAPPDUPresentInitiatingMessage,
+				InitiatingMessage: &ngapType.InitiatingMessage{
+					ProcedureCode: ngapType.ProcedureCode{
+						Value: ngapType.ProcedureCodeAMFStatusIndication,
+					},
+					Criticality: ngapType.Criticality{
+						Value: ngapType.CriticalityPresentIgnore,
+					},
+					Value: ngapType.InitiatingMessageValue{
+						Present: ngapType.InitiatingMessagePresentAMFStatusIndication,
+						AMFStatusIndication: &ngapType.AMFStatusIndication{
+							ProtocolIEs: ngapType.ProtocolIEContainerAMFStatusIndicationIEs{
+								List: []ngapType.AMFStatusIndicationIEs{
+									{
+										Id: ngapType.ProtocolIEID{
+											Value: ngapType.ProtocolIEIDUnavailableGUAMIList,
+										},
+										Criticality: ngapType.Criticality{
+											Value: ngapType.CriticalityPresentReject,
+										},
+										Value: ngapType.AMFStatusIndicationIEsValue{
+											Present: ngapType.AMFStatusIndicationIEsPresentUnavailableGUAMIList,
+											UnavailableGUAMIList: &ngapType.UnavailableGUAMIList{
+												List: []ngapType.UnavailableGUAMIItem{
+													{
+														GUAMI: ngapType.GUAMI{
+															PLMNIdentity: ngapType.PLMNIdentity{
+																Value: aper.OctetString{
+																	0x02, 0xf8, 0x39,
+																},
+															},
+															AMFRegionID: ngapType.AMFRegionID{
+																Value: aper.BitString{
+																	Bytes: []byte{
+																		0xca,
+																	},
+																	BitLength: 8,
+																},
+															},
+															AMFSetID: ngapType.AMFSetID{
+																Value: aper.BitString{
+																	Bytes: []byte{
+																		0xfe, 0x00,
+																	},
+																	BitLength: 10,
+																},
+															},
+															AMFPointer: ngapType.AMFPointer{
+																Value: aper.BitString{
+																	Bytes: []byte{
+																		0x00,
+																	},
+																	BitLength: 6,
+																},
+															},
+														},
+														BackupAMFName: &ngapType.AMFName{
+															Value: "AMF1",
+														},
+													},
+												},
 											},
 										},
 									},
