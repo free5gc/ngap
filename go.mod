@@ -1,6 +1,6 @@
 module github.com/free5gc/ngap
 
-go 1.17
+go 1.21
 
 require (
 	github.com/free5gc/aper v1.0.5
