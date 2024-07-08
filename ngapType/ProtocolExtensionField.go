@@ -222,10 +222,14 @@ type BroadcastPLMNItemExtIEs struct {
 
 const (
 	BroadcastPLMNItemExtIEsPresentNothing int = iota /* No components present */
+	BroadcastPLMNItemExtIEsPresentNPNSupport
+	BroadcastPLMNItemExtIEsPresentExtendedTAISliceSupportList
 )
 
 type BroadcastPLMNItemExtIEsExtensionValue struct {
-	Present int
+	Present                     int
+	NPNSupport                  *NPNSupport               `aper:"referenceFieldValue:258,valueLB:0,valueUB:1"`
+	ExtendedTAISliceSupportList *ExtendedSliceSupportList `aper:"referenceFieldValue:270"`
 }
 
 type CancelledCellsInEAIEUTRAItemExtIEs struct {
@@ -1830,10 +1834,14 @@ type PLMNSupportItemExtIEs struct {
 
 const (
 	PLMNSupportItemExtIEsPresentNothing int = iota /* No components present */
+	PLMNSupportItemExtIEsPresentNPNSupport
+	PLMNSupportItemExtIEsPresentExtendedSliceSupportList
 )
 
 type PLMNSupportItemExtIEsExtensionValue struct {
-	Present int
+	Present                  int
+	NPNSupport               *NPNSupport               `aper:"referenceFieldValue:258,valueLB:0,valueUB:1"`
+	ExtendedSliceSupportList *ExtendedSliceSupportList `aper:"referenceFieldValue:270"`
 }
 
 type QosFlowAcceptedItemExtIEs struct {
@@ -2255,6 +2263,20 @@ const (
 )
 
 type SliceSupportItemExtIEsExtensionValue struct {
+	Present int
+}
+
+type SNPNMobilityInformationExtIEs struct {
+	Id             ProtocolExtensionID
+	Criticality    Criticality
+	ExtensionValue SNPNMobilityInformationExtIEsExtensionValue `aper:"openType,referenceFieldName:Id"`
+}
+
+const (
+	SNPNMobilityInformationExtIEsPresentNothing int = iota /* No components present */
+)
+
+type SNPNMobilityInformationExtIEsExtensionValue struct {
 	Present int
 }
 
@@ -2728,10 +2750,14 @@ type UserLocationInformationNRExtIEs struct {
 
 const (
 	UserLocationInformationNRExtIEsPresentNothing int = iota /* No components present */
+	UserLocationInformationNRExtIEsPresentPSCellInformation
+	UserLocationInformationNRExtIEsPresentNID
 )
 
 type UserLocationInformationNRExtIEsExtensionValue struct {
-	Present int
+	Present           int
+	PSCellInformation *NGRANCGI `aper:"referenceFieldValue:149"`
+	NID               *NID      `aper:"referenceFieldValue:263"`
 }
 
 type UserPlaneSecurityInformationExtIEs struct {
