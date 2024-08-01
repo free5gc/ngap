@@ -19,3 +19,5 @@ require (
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+replace github.com/free5gc/openapi => github.com/yccodr/openapi v1.0.9-0.20240801032959-f8c907cee3a4
