@@ -1276,6 +1276,7 @@ const (
 	InitialUEMessageIEsPresentAMFSetID
 	InitialUEMessageIEsPresentUEContextRequest
 	InitialUEMessageIEsPresentAllowedNSSAI
+	InitialUEMessageIEsPresentSelectedPLMNIdentity // r16
 )
 
 type InitialUEMessageIEsValue struct {
@@ -1288,6 +1289,7 @@ type InitialUEMessageIEsValue struct {
 	AMFSetID                *AMFSetID                `aper:"referenceFieldValue:3"`
 	UEContextRequest        *UEContextRequest        `aper:"referenceFieldValue:112"`
 	AllowedNSSAI            *AllowedNSSAI            `aper:"referenceFieldValue:0"`
+	SelectedPLMNIdentity    *PLMNIdentity            `aper:"referenceFieldValue:174"` // r16
 }
 
 type DownlinkNASTransportIEs struct {
