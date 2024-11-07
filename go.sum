@@ -3,6 +3,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/free5gc/aper v1.0.6-0.20240503143507-2c4c4780b98f h1:sO8FFwAq7feSw/vKN9ioY+fX1gNTXd6/xQOqaeclzsA=
 github.com/free5gc/aper v1.0.6-0.20240503143507-2c4c4780b98f/go.mod h1:oh3dtNsje2W4/q3pfidMWQKXbXIehXK3t6CD9tXmHx0=
+github.com/free5gc/openapi v1.0.9-0.20241107082311-771224514296 h1:e/ozr2CI18QpR7tfxgNm7gXuJrP014d4vNaEIxzk2f4=
+github.com/free5gc/openapi v1.0.9-0.20241107082311-771224514296/go.mod h1:aKw6uGzEibGDrn9++w4/JpWxaaUBo7GaqsvuFKU9fl4=
 github.com/golang-jwt/jwt/v5 v5.2.1 h1:OuVbFODueb089Lh128TAcimifWaLhJwVflnrgM17wHk=
 github.com/golang-jwt/jwt/v5 v5.2.1/go.mod h1:pqrtFR0X4osieyHYxtmOUWsAWrfe1Q5UVIyoH402zdk=
 github.com/kr/pretty v0.1.0 h1:L/CwN0zerZDmRFUapSPitk6f+Q3+0za1rQkzVuMiMFI=
@@ -20,8 +22,6 @@ github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcU
 github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
 github.com/tim-ywliu/nested-logrus-formatter v1.3.2 h1:jugNJ2/CNCI79SxOJCOhwUHeN3O7/7/bj+ZRGOFlCSw=
 github.com/tim-ywliu/nested-logrus-formatter v1.3.2/go.mod h1:oGPmcxZB65j9Wo7mCnQKSrKEJtVDqyjD666SGmyStXI=
-github.com/yccodr/openapi v1.0.9-0.20240801032959-f8c907cee3a4 h1:s9a4LN+K2bObkYtWdLN0cPuZ6hDugcKIIWhKrW3sJnY=
-github.com/yccodr/openapi v1.0.9-0.20240801032959-f8c907cee3a4/go.mod h1:aKw6uGzEibGDrn9++w4/JpWxaaUBo7GaqsvuFKU9fl4=
 golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.18.0 h1:DBdB3niSjOA/O0blCZBqDefyWNYveAYMNF1Wum0DYQ4=
 golang.org/x/sys v0.18.0/go.mod h1:/VUhepiaJMQUp4+oa/7Zr1D23ma6VTLIYjOOTFZPUcA=
