@@ -3,8 +3,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/free5gc/aper v1.0.6-0.20250102035630-3ddc831eed6a h1:PRapMdjqo96T7y8PHShUlirRDI0EaJNVrmdfQaHxOKY=
 github.com/free5gc/aper v1.0.6-0.20250102035630-3ddc831eed6a/go.mod h1:L4d0BJpHVOgiOC49aCz44mF0Vja3l+bcVSAs7i3CZ8s=
-github.com/free5gc/openapi v1.0.9-0.20250102040443-6ef25ba56c88 h1:cJHWPNhbUMZii5jaiOysv6TtdntOBHhL6j3uLq5sBOs=
-github.com/free5gc/openapi v1.0.9-0.20250102040443-6ef25ba56c88/go.mod h1:Ti0AyK1iKoocsLBWghLrNG28JRzdX4CQ68H3SObCFT8=
+github.com/free5gc/openapi v1.0.9-0.20250415033258-bb7a9094be97 h1:xZDmATSCbBPR3epooQTqgSgfOzwDvff4MkRLfwKpwX4=
+github.com/free5gc/openapi v1.0.9-0.20250415033258-bb7a9094be97/go.mod h1:Q2vSmc1xpSE9Dy8rbNSWQwv7cFLHbZvKhq528vj6Wbg=
 github.com/golang-jwt/jwt/v5 v5.2.2 h1:Rl4B7itRWVtYIHFrSNd7vhTiz9UpLdi6gZhZ3wEeDy8=
 github.com/golang-jwt/jwt/v5 v5.2.2/go.mod h1:pqrtFR0X4osieyHYxtmOUWsAWrfe1Q5UVIyoH402zdk=
 github.com/kr/pretty v0.1.0 h1:L/CwN0zerZDmRFUapSPitk6f+Q3+0za1rQkzVuMiMFI=
