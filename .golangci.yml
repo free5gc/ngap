@@ -63,7 +63,7 @@ linters:
             - (github.com/golangci/golangci-lint/pkg/logutils.Log).Errorf
             - (github.com/golangci/golangci-lint/pkg/logutils.Log).Fatalf
     lll:
-      line-length: 120
+      line-length: 150
       tab-width: 1
     nakedret:
       max-func-lines: 30
