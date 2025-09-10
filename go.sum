@@ -3,8 +3,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/free5gc/aper v1.0.6-0.20250102035630-3ddc831eed6a h1:PRapMdjqo96T7y8PHShUlirRDI0EaJNVrmdfQaHxOKY=
 github.com/free5gc/aper v1.0.6-0.20250102035630-3ddc831eed6a/go.mod h1:L4d0BJpHVOgiOC49aCz44mF0Vja3l+bcVSAs7i3CZ8s=
-github.com/free5gc/openapi v1.1.0 h1:bOTp6vKC2MxupEXD76qeUL1MppV/SmXnka09JQJADZ0=
-github.com/free5gc/openapi v1.1.0/go.mod h1:Q2vSmc1xpSE9Dy8rbNSWQwv7cFLHbZvKhq528vj6Wbg=
+github.com/free5gc/openapi v1.2.2 h1:SoWkuI/QOWA22UgNuqtkeoKeLEjThziJYGQFh/1gxSQ=
+github.com/free5gc/openapi v1.2.2/go.mod h1:5HbgGqlhaTBwcOrXQLCOmpbQoX/ogKSg6+TAsR1VxUM=
 github.com/golang-jwt/jwt/v5 v5.2.2 h1:Rl4B7itRWVtYIHFrSNd7vhTiz9UpLdi6gZhZ3wEeDy8=
 github.com/golang-jwt/jwt/v5 v5.2.2/go.mod h1:pqrtFR0X4osieyHYxtmOUWsAWrfe1Q5UVIyoH402zdk=
 github.com/kr/pretty v0.1.0 h1:L/CwN0zerZDmRFUapSPitk6f+Q3+0za1rQkzVuMiMFI=
@@ -23,8 +23,8 @@ github.com/stretchr/testify v1.9.0/go.mod h1:r2ic/lqez/lEtzL7wO/rwa5dbSLXVDPFyf8
 github.com/tim-ywliu/nested-logrus-formatter v1.3.2 h1:jugNJ2/CNCI79SxOJCOhwUHeN3O7/7/bj+ZRGOFlCSw=
 github.com/tim-ywliu/nested-logrus-formatter v1.3.2/go.mod h1:oGPmcxZB65j9Wo7mCnQKSrKEJtVDqyjD666SGmyStXI=
 golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
-golang.org/x/sys v0.28.0 h1:Fksou7UEQUWlKvIdsqzJmUmCX3cZuD2+P3XyyzwMhlA=
-golang.org/x/sys v0.28.0/go.mod h1:/VUhepiaJMQUp4+oa/7Zr1D23ma6VTLIYjOOTFZPUcA=
+golang.org/x/sys v0.31.0 h1:ioabZlmFYtWhL+TRYpcnNlLwhyxaM9kWTDEmfnprqik=
+golang.org/x/sys v0.31.0/go.mod h1:BJP2sWEmIv4KK5OTEluFJCKSidICx8ciO85XgH3Ak8k=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 h1:qIbj1fsPNlZgppZ+VLlY7N33q108Sa+fhmuc+sWQYwY=
 gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
