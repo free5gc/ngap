@@ -1133,7 +1133,7 @@ const (
 
 type PathSwitchRequestAcknowledgeTransferExtIEsExtensionValue struct {
 	Present                       int
-	AdditionalNGUUPTNLInformation *UPTransportLayerInformationPairList /* Do not find the Reference Field Value */
+	AdditionalNGUUPTNLInformation *UPTransportLayerInformationPairList `aper:"referenceFieldValue:154"`
 }
 
 type PathSwitchRequestSetupFailedTransferExtIEs struct {
