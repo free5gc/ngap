@@ -1163,7 +1163,7 @@ const (
 
 type PathSwitchRequestTransferExtIEsExtensionValue struct {
 	Present                              int
-	AdditionalDLQosFlowPerTNLInformation *QosFlowPerTNLInformationList /* Do not find the Reference Field Value */
+	AdditionalDLQosFlowPerTNLInformation *QosFlowPerTNLInformationList `aper:"referenceFieldValue:155"`
 }
 
 type PathSwitchRequestUnsuccessfulTransferExtIEs struct {
