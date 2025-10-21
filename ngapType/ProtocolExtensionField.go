@@ -1133,7 +1133,7 @@ const (
 
 type PathSwitchRequestAcknowledgeTransferExtIEsExtensionValue struct {
 	Present                       int
-	AdditionalNGUUPTNLInformation *UPTransportLayerInformationPairList /* Do not find the Reference Field Value */
+	AdditionalNGUUPTNLInformation *UPTransportLayerInformationPairList `aper:"referenceFieldValue:154"`
 }
 
 type PathSwitchRequestSetupFailedTransferExtIEs struct {
@@ -1163,7 +1163,7 @@ const (
 
 type PathSwitchRequestTransferExtIEsExtensionValue struct {
 	Present                              int
-	AdditionalDLQosFlowPerTNLInformation *QosFlowPerTNLInformationList /* Do not find the Reference Field Value */
+	AdditionalDLQosFlowPerTNLInformation *QosFlowPerTNLInformationList `aper:"referenceFieldValue:155"`
 }
 
 type PathSwitchRequestUnsuccessfulTransferExtIEs struct {
