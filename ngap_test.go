@@ -6,8 +6,10 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
+	"gotest.tools/v3/assert"
 
 	"github.com/free5gc/aper"
+	"github.com/free5gc/ngap/ngapConvert"
 	"github.com/free5gc/ngap/ngapType"
 )
 
@@ -344,6 +346,151 @@ func TestDecoder(t *testing.T) {
 			if !reflect.DeepEqual(gotPdu, tt.wantPdu) {
 				t.Errorf("Decoder() = %v, want %v", gotPdu, tt.wantPdu)
 			}
+		})
+	}
+}
+
+func TestCorrectAperReferenceFieldValueSetting(t *testing.T) {
+	testCases := []struct {
+		name string
+		pdu  interface{}
+	}{
+		{
+			name: "PathSwitchRequestTransferWithAdditionalDLQosFlowPerTNLInformation",
+			pdu: ngapType.PathSwitchRequestTransfer{
+				DLNGUUPTNLInformation: ngapType.UPTransportLayerInformation{
+					Present: ngapType.UPTransportLayerInformationPresentGTPTunnel,
+					GTPTunnel: &ngapType.GTPTunnel{
+						GTPTEID: ngapType.GTPTEID{
+							Value: aper.OctetString{0x00, 0x00, 0x00, 0x01},
+						},
+						TransportLayerAddress: ngapConvert.IPAddressToNgap("127.0.0.1", ""),
+					},
+				},
+				QosFlowAcceptedList: ngapType.QosFlowAcceptedList{
+					List: []ngapType.QosFlowAcceptedItem{
+						{
+							QosFlowIdentifier: ngapType.QosFlowIdentifier{
+								Value: 1,
+							},
+						},
+					},
+				},
+				IEExtensions: &ngapType.ProtocolExtensionContainerPathSwitchRequestTransferExtIEs{
+					List: []ngapType.PathSwitchRequestTransferExtIEs{
+						{
+							Id: ngapType.ProtocolExtensionID{
+								Value: ngapType.ProtocolIEIDAdditionalDLQosFlowPerTNLInformation,
+							},
+							Criticality: ngapType.Criticality{
+								Value: ngapType.CriticalityPresentIgnore,
+							},
+							ExtensionValue: ngapType.PathSwitchRequestTransferExtIEsExtensionValue{
+								Present: ngapType.PathSwitchRequestTransferExtIEsPresentAdditionalDLQosFlowPerTNLInformation,
+								AdditionalDLQosFlowPerTNLInformation: &ngapType.QosFlowPerTNLInformationList{
+									List: []ngapType.QosFlowPerTNLInformationItem{
+										{
+											QosFlowPerTNLInformation: ngapType.QosFlowPerTNLInformation{
+												UPTransportLayerInformation: ngapType.UPTransportLayerInformation{
+													Present: ngapType.UPTransportLayerInformationPresentGTPTunnel,
+													GTPTunnel: &ngapType.GTPTunnel{
+														GTPTEID: ngapType.GTPTEID{
+															Value: aper.OctetString{0x00, 0x00, 0x00, 0x01},
+														},
+														TransportLayerAddress: ngapConvert.IPAddressToNgap("127.0.0.1", ""),
+													},
+												},
+												AssociatedQosFlowList: ngapType.AssociatedQosFlowList{
+													List: []ngapType.AssociatedQosFlowItem{
+														{
+															QosFlowIdentifier: ngapType.QosFlowIdentifier{
+																Value: 1,
+															},
+														},
+													},
+												},
+											},
+										},
+									},
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+		{
+			name: "PathSwitchRequestAcknowledgeTransferWithAdditionalNGUUPTNLInformation",
+			pdu: ngapType.PathSwitchRequestAcknowledgeTransfer{
+				ULNGUUPTNLInformation: &ngapType.UPTransportLayerInformation{
+					Present: ngapType.UPTransportLayerInformationPresentGTPTunnel,
+					GTPTunnel: &ngapType.GTPTunnel{
+						GTPTEID: ngapType.GTPTEID{
+							Value: aper.OctetString{0x00, 0x00, 0x00, 0x01},
+						},
+						TransportLayerAddress: ngapConvert.IPAddressToNgap("127.0.0.1", ""),
+					},
+				},
+				IEExtensions: &ngapType.ProtocolExtensionContainerPathSwitchRequestAcknowledgeTransferExtIEs{
+					List: []ngapType.PathSwitchRequestAcknowledgeTransferExtIEs{
+						{
+							Id: ngapType.ProtocolExtensionID{
+								Value: ngapType.ProtocolIEIDAdditionalNGUUPTNLInformation,
+							},
+							Criticality: ngapType.Criticality{
+								Value: ngapType.CriticalityPresentIgnore,
+							},
+							ExtensionValue: ngapType.PathSwitchRequestAcknowledgeTransferExtIEsExtensionValue{
+								Present: ngapType.PathSwitchRequestAcknowledgeTransferExtIEsPresentAdditionalNGUUPTNLInformation,
+								AdditionalNGUUPTNLInformation: &ngapType.UPTransportLayerInformationPairList{
+									List: []ngapType.UPTransportLayerInformationPairItem{
+										{
+											ULNGUUPTNLInformation: ngapType.UPTransportLayerInformation{
+												Present: ngapType.UPTransportLayerInformationPresentGTPTunnel,
+												GTPTunnel: &ngapType.GTPTunnel{
+													GTPTEID: ngapType.GTPTEID{
+														Value: aper.OctetString{0x00, 0x00, 0x00, 0x01},
+													},
+													TransportLayerAddress: ngapConvert.IPAddressToNgap("127.0.0.1", ""),
+												},
+											},
+											DLNGUUPTNLInformation: ngapType.UPTransportLayerInformation{
+												Present: ngapType.UPTransportLayerInformationPresentGTPTunnel,
+												GTPTunnel: &ngapType.GTPTunnel{
+													GTPTEID: ngapType.GTPTEID{
+														Value: aper.OctetString{0x00, 0x00, 0x00, 0x01},
+													},
+													TransportLayerAddress: ngapConvert.IPAddressToNgap("127.0.0.1", ""),
+												},
+											},
+										},
+									},
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+	}
+
+	for _, testCase := range testCases {
+		t.Run(testCase.name, func(t *testing.T) {
+			t.Parallel()
+
+			marshaledData, err := aper.MarshalWithParams(testCase.pdu, "valueExt")
+			if err != nil {
+				t.Fatalf("Failed to marshal data: %v", err)
+			}
+
+			unmarshaledDataPtr := reflect.New(reflect.TypeOf(testCase.pdu)).Interface()
+			err = aper.UnmarshalWithParams(marshaledData, unmarshaledDataPtr, "valueExt")
+			if err != nil {
+				t.Fatalf("Failed to unmarshal data: %v", err)
+			}
+
+			unmarshaledData := reflect.ValueOf(unmarshaledDataPtr).Elem().Interface()
+			assert.DeepEqual(t, testCase.pdu, unmarshaledData)
 		})
 	}
 }
