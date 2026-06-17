@@ -17,17 +17,11 @@ func IPAddressToString(ipAddr ngapType.TransportLayerAddress) (ipv4Addr, ipv6Add
 		netIP := net.IPv4(ip.Bytes[0], ip.Bytes[1], ip.Bytes[2], ip.Bytes[3])
 		ipv4Addr = netIP.String()
 	case 128: // ipv6
-		netIP := net.IP{}
-		for i := range ip.Bytes {
-			netIP = append(netIP, ip.Bytes[i])
-		}
+		netIP := net.IP(ip.Bytes[0:16])
 		ipv6Addr = netIP.String()
 	case 160: // ipv4 + ipv6, and ipv4 is contained in the first 32 bits
 		netIPv4 := net.IPv4(ip.Bytes[0], ip.Bytes[1], ip.Bytes[2], ip.Bytes[3])
-		netIPv6 := net.IP{}
-		for i := range ip.Bytes {
-			netIPv6 = append(netIPv6, ip.Bytes[i+4])
-		}
+		netIPv6 := net.IP(ip.Bytes[4:20])
 		ipv4Addr = netIPv4.String()
 		ipv6Addr = netIPv6.String()
 	}
