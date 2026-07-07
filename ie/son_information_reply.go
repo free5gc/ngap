@@ -1,0 +1,103 @@
+package ie
+
+import (
+	"github.com/pkg/errors"
+
+	"github.com/free5gc/ngap/aper"
+)
+
+type SONInformationReply struct {
+	XnTNLConfigurationInfo *XnTNLConfigurationInfo                              // valueExt,optional
+	IEExtensions           *ProtocolExtensionContainerSONInformationReplyExtIEs // optional
+}
+
+func (x *SONInformationReply) Write(pd *aper.PerBitData) error {
+	var err error
+	var sLb, sUb *uint64 = new(uint64), new(uint64)
+	var vLb, vUb *int64 = new(int64), new(int64)
+
+	// dummy function to avoid unused error
+	foo(err, sLb, sUb, vLb, vUb)
+
+	// Check mandatory field or write optPresentFlag for optional field
+	SONInformationReplyOptPresentFlag := []bool{}
+	// optional field
+	if x.XnTNLConfigurationInfo != nil {
+		SONInformationReplyOptPresentFlag = append(SONInformationReplyOptPresentFlag, true)
+	} else {
+		SONInformationReplyOptPresentFlag = append(SONInformationReplyOptPresentFlag, false)
+	}
+	// optional field
+	if x.IEExtensions != nil {
+		SONInformationReplyOptPresentFlag = append(SONInformationReplyOptPresentFlag, true)
+	} else {
+		SONInformationReplyOptPresentFlag = append(SONInformationReplyOptPresentFlag, false)
+	}
+
+	err = pd.WriteSequencePreambleBitMap(SONInformationReplyOptPresentFlag, true)
+	if err != nil {
+		return errors.Wrap(err, "sequence marshal failed")
+	}
+
+	// Write sequence elements
+
+	// optional field
+	if x.XnTNLConfigurationInfo != nil {
+		// Write struct defined elsewhere (Pointer)
+		err = x.XnTNLConfigurationInfo.Write(pd)
+		if err != nil {
+			return errors.Wrap(err, "XnTNLConfigurationInfo marshal failed")
+		}
+	}
+
+	// optional field
+	if x.IEExtensions != nil {
+		// Write struct defined elsewhere (Pointer)
+		err = x.IEExtensions.Write(pd)
+		if err != nil {
+			return errors.Wrap(err, "IEExtensions marshal failed")
+		}
+	}
+
+	return nil
+}
+
+func (x *SONInformationReply) Read(pd *aper.PerBitData) error {
+	var err error
+	var sLb, sUb *uint64 = new(uint64), new(uint64)
+	var vLb, vUb *int64 = new(int64), new(int64)
+
+	// dummy function to avoid unused error
+	foo(err, sLb, sUb, vLb, vUb)
+
+	// Read optPresentFlag
+	SONInformationReplyOptPresentFlag := make([]bool, 2)
+	err = pd.ReadSequencePreambleBitMap(&SONInformationReplyOptPresentFlag, true)
+	if err != nil {
+		return BuildTransferSyntaxErr(errors.Wrap(err, "asn.1 decode sequence error"))
+	}
+
+	// Read sequence elements
+
+	// optional field (optPresentFlag index: 0)
+	if SONInformationReplyOptPresentFlag[0] {
+		// Read struct defined elsewhere (Pointer)
+		x.XnTNLConfigurationInfo = new(XnTNLConfigurationInfo)
+		err = x.XnTNLConfigurationInfo.Read(pd)
+		if err != nil {
+			return errors.Wrap(err, "decode XnTNLConfigurationInfo error")
+		}
+	}
+
+	// optional field (optPresentFlag index: 1)
+	if SONInformationReplyOptPresentFlag[1] {
+		// Read struct defined elsewhere (Pointer)
+		x.IEExtensions = new(ProtocolExtensionContainerSONInformationReplyExtIEs)
+		err = x.IEExtensions.Read(pd)
+		if err != nil {
+			return errors.Wrap(err, "decode IEExtensions error")
+		}
+	}
+
+	return nil
+}

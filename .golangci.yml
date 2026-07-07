@@ -2,14 +2,21 @@ version: "2"
 run:
   concurrency: 4
   issues-exit-code: 1
-  tests: true
+  tests: false
   allow-parallel-runners: true
+output:
+  formats:
+    text:
+      path: stdout
+      print-linter-name: true
+      print-issued-lines: true
 linters:
   enable:
     - asciicheck
     - bodyclose
     - dogsled
     - godox
+    - gosec
     - lll
     - misspell
     - nakedret
@@ -51,7 +58,6 @@ linters:
     govet:
       enable:
         - atomicalign
-      disable:
         - shadow
       enable-all: false
       disable-all: false
@@ -63,7 +69,7 @@ linters:
             - (github.com/golangci/golangci-lint/pkg/logutils.Log).Errorf
             - (github.com/golangci/golangci-lint/pkg/logutils.Log).Fatalf
     lll:
-      line-length: 150
+      line-length: 120
       tab-width: 1
     nakedret:
       max-func-lines: 30
@@ -85,11 +91,23 @@ linters:
       force-err-cuddling: false
   exclusions:
     generated: lax
+    rules:
+      - path: (.+)\.go$
+        text: G115
+      - path: (.+)\.go$
+        text: G301
+      - path: (.+)\.go$
+        text: G302
+      - path: (.+)\.go$
+        text: G307
     paths:
+      - message
+      - ie
       - third_party$
       - builtin$
       - examples$
 issues:
+  uniq-by-line: true
   new-from-rev: ""
   new: false
 severity:
@@ -108,7 +126,6 @@ formatters:
       sections:
         - standard
         - default
-        - prefix(github.com/free5gc)
     gofmt:
       simplify: true
     goimports:
@@ -117,6 +134,8 @@ formatters:
   exclusions:
     generated: lax
     paths:
+      - message
+      - ie
       - third_party$
       - builtin$
       - examples$
